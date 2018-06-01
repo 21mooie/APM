@@ -18,11 +18,14 @@ export class ProductDetailComponent implements OnInit {
   ngOnInit() {
     let id = +this._route.snapshot.paramMap.get('id'); 
     this.pageTitle += `: ${id}`;
-    this._service.getProducts()
-            .subscribe(product => {
-                this.product = product.filter(prod=>prod.productId===id)[0];
-            },
-                        error => this.errorMessage = <any>error);
+    // this._service.getProducts()
+    //         .subscribe(product => {
+    //             this.product = product.filter(prod=>prod.productId===id)[0];
+    //         },
+    //                     error => this.errorMessage = <any>error);
+    this._service.getProduct(id).subscribe(
+      product => this.product = product,
+      error => this.errorMessage = <any>error);
   }
 
   onBack(): void {
