@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IProduct } from './product';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from './product.service';
 
 @Component({
@@ -12,7 +12,8 @@ export class ProductDetailComponent implements OnInit {
   product: IProduct;
   errorMessage: string = '';
 
-  constructor(private _route:ActivatedRoute,private _service: ProductService) { }
+  constructor(private _route:ActivatedRoute,private _service: ProductService,
+              private _router: Router) { }
 
   ngOnInit() {
     let id = +this._route.snapshot.paramMap.get('id'); 
@@ -22,6 +23,10 @@ export class ProductDetailComponent implements OnInit {
                 this.product = product.filter(prod=>prod.productId===id)[0];
             },
                         error => this.errorMessage = <any>error);
+  }
+
+  onBack(): void {
+    this._router.navigate(['/products']);
   }
 
 }
