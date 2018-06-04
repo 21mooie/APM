@@ -7,9 +7,8 @@ import { ProductService } from "./products/services/product.service";
     <div>
       <nav class='navbar navbar-default'>
         <div class='container-fluid'>
-          <a class='navbar-brand'>{{pageTitle}}</a>
+          <a class='navbar-brand' [routerLink] = "['/welcome']">{{pageTitle}}</a>
           <ul class='nav navbar-nav'>
-            <li><a [routerLink] = "['/welcome']">Home</a></li>
             <li><a [routerLink] = "['/products']">Product List</a></li>
           </ul>
         </div>
