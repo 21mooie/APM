@@ -3,7 +3,15 @@
     <!-- {{pageTitle + ': ' + product?.productName}}  safe navigation operator-->
     {{pageTitle + ': ' + product.productName}}
   </div>
-  <!-- {{product.imageUrl}} -->
+  <div>
+    <img [src]="product.imageUrl"
+        [alt]="product.productName"
+        [title]="product.productName"/>
+    <h1>Name: {{product.productName}}</h1>
+    <h2>Product Code: {{product.productCode | lowercase | convertToSpaces:'-'}}</h2>
+    <h2>Release Date: {{product.releaseDate}}</h2>
+    <h2>Price: {{product.price | currency:'USD':true:'1.2-2'}}</h2>
+  </div>
   <div class='panel-footer'>
     <a class='btn btn-default' (click)='onBack()' style='width:80px'>
       <i class='glyphicon glyphicon-chevron-left'></i> Back
