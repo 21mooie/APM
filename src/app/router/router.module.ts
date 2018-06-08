@@ -8,9 +8,9 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     SharedModule,
     RouterModule.forRoot([
-      {path: 'welcome', component: WelcomeComponent},
-      {path: '',redirectTo:'welcome', pathMatch:'full'},
-      {path: '**', redirectTo:'welcome', pathMatch:'full'}
+      {path: 'welcome', component: WelcomeComponent}
+      // {path: '',redirectTo:'welcome', pathMatch:'full'},
+      // {path: '**', redirectTo:'welcome', pathMatch:'full'}
     ])
   ],
   exports:[

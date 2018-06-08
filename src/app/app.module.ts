@@ -7,6 +7,9 @@ import { WelcomeComponent } from './home/welcome.component';
 import { ProductModule } from './products/product.module';
 import { AppRouterModule } from './router/router.module';
 import { LoginModule } from './auth/login/login.module';
+import { NotFoundComponent } from './error/not-found/not-found.component';
+import { ErrorModule } from './error/error.module';
+
 
 @NgModule({
   declarations: [ 
@@ -18,7 +21,8 @@ import { LoginModule } from './auth/login/login.module';
     HttpClientModule,
     ProductModule,
     AppRouterModule,
-    LoginModule
+    LoginModule,
+    ErrorModule
   ],
   bootstrap: [AppComponent]
 })
